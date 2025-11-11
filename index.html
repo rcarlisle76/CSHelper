@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Tracker - Stay Under 30%</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Credit Utilization Tracker</h1>
+            <p class="subtitle">Keep your credit usage under 30% to improve your credit score</p>
+        </header>
+
+        <div class="summary-card">
+            <div class="summary-content">
+                <div class="summary-item">
+                    <span class="label">Total Credit Limit</span>
+                    <span class="value" id="totalLimit">$0</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Total Balance Used</span>
+                    <span class="value" id="totalBalance">$0</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Overall Utilization</span>
+                    <span class="value utilization-value" id="overallUtilization">0%</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-marker" style="left: 30%;">
+                    <span class="marker-label">30% Goal</span>
+                </div>
+            </div>
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+
+        <div class="add-card-section">
+            <h2>Add New Credit Card</h2>
+            <form id="cardForm">
+                <div class="form-group">
+                    <label for="cardName">Card Name</label>
+                    <input type="text" id="cardName" placeholder="e.g., Chase Freedom" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="creditLimit">Credit Limit ($)</label>
+                        <input type="number" id="creditLimit" placeholder="5000" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentBalance">Current Balance ($)</label>
+                        <input type="number" id="currentBalance" placeholder="1000" min="0" step="0.01" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Card</button>
+            </form>
+        </div>
+
+        <div class="cards-section">
+            <h2>Your Credit Cards</h2>
+            <div id="cardsList" class="cards-list">
+                <p class="empty-state">No credit cards added yet. Add your first card above!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
