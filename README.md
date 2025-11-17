@@ -1,6 +1,8 @@
-# Credit Tracker App
+# Credit Tracker - Desktop App
 
-A simple web application to help you track your credit card utilization and keep it under 30% to improve your credit score.
+A desktop application to help you track your credit card utilization and keep it under 30% to improve your credit score.
+
+Built with Electron, this app runs natively on Windows, macOS, and Linux.
 
 ## Why 30% Matters
 
@@ -78,29 +80,93 @@ Your overall utilization would be:
 
 ## Technical Details
 
+- **Platform**: Electron (cross-platform desktop app)
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Storage**: Browser localStorage (data stays on your device)
-- **No Backend Required**: Runs entirely in your browser
+- **Storage**: localStorage (data stays on your device)
+- **No Backend Required**: Runs entirely on your computer
 - **Privacy**: Your financial data never leaves your device
 
-## Browser Compatibility
+## System Requirements
 
-Works in all modern browsers:
-- Chrome/Edge (recommended)
-- Firefox
-- Safari
-- Opera
+- **Windows**: Windows 10 or later
+- **macOS**: macOS 10.13 or later
+- **Linux**: Ubuntu 18.04+, Fedora 32+, Debian 10+
+
+## Installation & Running
+
+### Option 1: Run in Development Mode
+
+1. **Install Node.js** (if not already installed)
+   - Download from https://nodejs.org/ (LTS version recommended)
+
+2. **Clone or download this repository**
+   ```bash
+   git clone <your-repo-url>
+   cd CSHelper
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Run the app**
+   ```bash
+   npm start
+   ```
+
+### Option 2: Build Standalone Executable
+
+Build a distributable app for your operating system:
+
+**For Windows:**
+```bash
+npm run build:win
+```
+This creates an installer in the `dist/` folder.
+
+**For macOS:**
+```bash
+npm run build:mac
+```
+This creates a .dmg file in the `dist/` folder.
+
+**For Linux:**
+```bash
+npm run build:linux
+```
+This creates an AppImage and .deb package in the `dist/` folder.
+
+**For all platforms:**
+```bash
+npm run build:all
+```
+
+### Installing the Built App
+
+After building:
+1. Navigate to the `dist/` folder
+2. Run the installer for your platform:
+   - **Windows**: Run the `.exe` installer
+   - **macOS**: Open the `.dmg` and drag to Applications
+   - **Linux**: Run the `.AppImage` or install the `.deb` package
+
+## Desktop App Features
+
+Additional features available in the desktop version:
+
+- **Menu Bar**: File, Edit, View, and Help menus
+- **Keyboard Shortcuts**:
+  - `Ctrl/Cmd + Q`: Quit
+  - `Ctrl/Cmd + Shift + I`: Developer Tools
+  - Standard edit shortcuts (Cut, Copy, Paste)
+- **Clear All Data**: File → Clear All Data (with confirmation)
+- **Window Controls**: Minimize, maximize, close like any desktop app
+- **Offline**: Works completely offline, no internet required
 
 ## Data Privacy
 
-All your credit card information is stored locally in your browser using localStorage. No data is sent to any server. Your financial information stays private and secure on your device.
-
-## Installation
-
-No installation required! Simply:
-1. Download or clone this repository
-2. Open `index.html` in your web browser
-3. Start tracking your credit
+All your credit card information is stored locally on your computer using Electron's localStorage. No data is sent to any server or cloud service. Your financial information stays completely private and secure on your device.
 
 ## License
 

@@ -1,0 +1,60 @@
+{
+  "name": "credit-tracker",
+  "version": "1.0.0",
+  "description": "Desktop app to track credit card utilization and keep it under 30%",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder -mwl"
+  },
+  "keywords": [
+    "credit",
+    "tracker",
+    "finance",
+    "credit-score"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.credittracker.app",
+    "productName": "Credit Tracker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "styles.css",
+      "app.js",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.finance"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icon.png",
+      "category": "Finance"
+    }
+  }
+}
